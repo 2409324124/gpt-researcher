@@ -26,14 +26,13 @@ import MobileHomeScreen from "@/components/mobile/MobileHomeScreen";
 import MobileResearchContent from "@/components/mobile/MobileResearchContent";
 
 export default function Home() {
-  const router = useRouter();
-  const [promptValue, setPromptValue] = useState("");
-  const [chatPromptValue, setChatPromptValue] = useState("");
-  const [showResult, setShowResult] = useState(false);
-  const [answer, setAnswer] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [isInChatMode, setIsInChatMode] = useState(false);
-  const [chatBoxSettings, setChatBoxSettings] = useState<ChatBoxSettings>(() => {
+  const [task, setTask] = useState('');
+  const [reportType, setReportType] = useState('research_report');
+  const [tone, setTone] = useState('Objective');
+  const [reportSource, setReportSource] = useState('web');
+  const [queryDomains, setQueryDomains] = useState('');
+  const [mcpEnabled, setMcpEnabled] = useState(false);
+  const [mcpConfig, setMcpConfig] = useState('[]');
     // Default settings
     const defaultSettings = {
       report_type: "research_report",
